@@ -1,0 +1,75 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="toolbar-css">
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/oppertunities" color="secondary"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="secondary">Job History</ion-title>
+    
+      <ion-icon name="notifications" color="secondary" class="notification-k"></ion-icon>
+   
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content class="job-section">
+  <div class="work-b">
+    <ion-row style="width: 100%;">
+     <ion-col size="6">
+       <img src="/assets/work.png" class="centerIMG" style="max-width: 70px;" />
+       <p class="work-p">Type Or Work</p>
+     </ion-col>
+
+     <ion-col size="6">
+       <div class="order-l">
+       <p>Order #20156</p>
+       <span>Time 12:00 pm 12 Oct 2022</span>
+       </div>
+     </ion-col>
+    </ion-row>
+
+    <ion-row style="width: 100%;">
+     <ion-col size="4" *ngFor="let i of [1,2,3,4,5]" class="ion-no-padding">
+       <ion-button color="light" class="btn-order btn-cleaning" expand="block" shape="round">Floor Cleaning</ion-button>
+     </ion-col>
+    
+    </ion-row>
+    <ion-row style="width: 100%;">
+     <p class="work-p">Work Location</p>
+      <ion-item class="locate-it">
+       <ion-icon name="locate" slot="start" color="secondary"></ion-icon>
+        <ion-label style="white-space: break-spaces;"> 18, Vaishali Enclave, Pitampura, New Delhi- 110034</ion-label>
+
+      </ion-item>            
+    
+    </ion-row>
+
+    <ion-row style="width: 100%;">
+     <ion-col size="12">
+       <p class="work-p">Time</p>
+         <ion-item class="locate-it">
+           <ion-icon name="time" slot="start" color="secondary"></ion-icon>
+           <ion-label>08:00 AM to 12:00 PM</ion-label>
+
+         </ion-item> 
+     </ion-col>
+     <ion-col size="12">
+       <p class="work-p">Date</p>
+         <ion-item class="locate-it">
+           <ion-icon name="calendar" slot="start" color="secondary"></ion-icon>
+           <ion-label>12 Oct 2022</ion-label>
+
+         </ion-item> 
+     </ion-col>         
+    
+    </ion-row>
+    
+    <ion-row class="button-sp">
+      <ion-col size="6">
+        <ion-button expand="block" shape="round" color="secondary">Accept</ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button expand="block" shape="round" color="primary">Cancel</ion-button>
+      </ion-col>
+    </ion-row>
+   </div>
+</ion-content>

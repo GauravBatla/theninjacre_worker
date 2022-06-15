@@ -1,0 +1,98 @@
+<ion-content class="signup-bg">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div>
+          <h2 class="login-heading">Register with <strong>Us</strong></h2>
+          <form [formGroup]="registerForm" (ngSubmit)="register()">
+            <ion-list>
+              <ion-item class="login-input" lines="none">
+                <div class="image-box ion-margin-bottom" (click)="takePicture()">
+                  <div *ngIf="!imageUrl">
+                    <p>
+                      <ion-icon name="cloud-upload" color="primary" slot="start"></ion-icon>
+                    </p>
+                    Upload Your Profile Picture
+                  </div>
+                  <img [src]="imageUrl" *ngIf="imageUrl" height="116px" width="116px" />
+                </div>
+              </ion-item>
+              <ion-item class="login-input" lines="none">
+                <ion-input formControlName="name" placeholder="Name"></ion-input>
+              </ion-item>
+              <!-- <ion-item class="login-input" lines="none">
+                <ion-input   formControlName="service_type" placeholder="Service type"></ion-input>            
+              </ion-item> -->
+              <ion-item class="login-input" lines="none">
+                <ion-input formControlName="present_addess" placeholder="Present Address"></ion-input>
+              </ion-item>
+              <ion-item class="login-input" lines="none">
+                <ion-input formControlName="permanent_addess" placeholder="Permanent Address"></ion-input>
+              </ion-item>
+              <ion-item class="login-input" lines="none">
+                <ion-input formControlName="mobile" placeholder="Contact No."></ion-input>
+              </ion-item>
+              <ion-item class="login-input" lines="none">
+                <ion-input formControlName="alt_no" placeholder="Alternate No."></ion-input>
+              </ion-item>
+              <ion-item class="login-input" lines="none">
+                <ion-label>Select ID</ion-label>
+                <ion-select placeholder="Select ID" formControlName="id_name">
+                  <ion-select-option *ngFor="let id of ID_proof" [value]="id.name">{{id.name}}</ion-select-option>
+                </ion-select>
+              </ion-item>
+              <ion-row>
+                <ion-col size="12">
+                  <div class="">
+                    <div class="image-boxss ion-margin-bottom" (click)="takePictureId()">
+                      <div *ngIf="!imageUrl1">
+                        <p>
+                          <ion-icon name="cloud-upload" color="primary" slot="start"></ion-icon>
+                        </p>
+                        Upload Your ID
+                      </div>
+                      <img [src]="imageUrl1" *ngIf="imageUrl1" height="110px" />
+                    </div>
+                  </div>
+                </ion-col>
+              </ion-row>
+              <ion-item class="login-input" lines="none">
+                <ion-input formControlName="family_member_name" placeholder="Family Member Name"></ion-input>
+              </ion-item>
+              <ion-row>
+                <ion-col size="12">
+                  <div class="">
+                    <div class="image-boxss ion-margin-bottom" (click)="takePictureFamily()">
+                      <div *ngIf="!imageUrl2">
+                        <p>
+                          <ion-icon name="cloud-upload" color="primary" slot="start"></ion-icon>
+                        </p>
+                        Family member photo
+                      </div>
+                      <img [src]="imageUrl2" *ngIf="imageUrl2" height="116px" width="116px" />
+                    </div>
+                  </div>
+                </ion-col>
+              </ion-row>
+              <ion-item class="login-input" lines="none">
+                <ion-input formControlName="refer_code" placeholder="Refer Code  (Optional)"></ion-input>
+              </ion-item>
+            </ion-list>
+            <ion-row>
+              <ion-col class="ion-margin-top ion-no-padding">
+                <ion-button shape="round" type="submit" [disabled]="!registerForm.valid" color="primary" expand="block">
+                  Sign up</ion-button>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col class="ion-text-center ion-margin-top">
+                <p class="otp-resend">Already have an account? <span routerLink="/login"
+                    routerDirection="root"><u>Login</u></span></p>
+              </ion-col>
+            </ion-row>
+          </form>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

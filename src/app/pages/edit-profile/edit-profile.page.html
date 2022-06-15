@@ -1,0 +1,173 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="toolbar-css">
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/oppertunities" color="secondary"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="secondary">Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="profile-bg">
+  <!-- <div>
+    <ion-button fill="clear">
+      <ion-icon name="chevron-back" slot="icon-only"></ion-icon>
+    </ion-button>
+    <ion-title>Profile</ion-title>
+  </div> -->
+  <ion-grid>
+    <!-- <div class="profile-edit">
+      <ion-row>
+        <ion-col size-xl="6" offset-xl="3">
+          <ion-row>
+            <ion-col size="6">
+              <div class="avtar-icon" (click)="takePicture()">
+                <img src="/assets/avtar-icon.png" width="45px" *ngIf="!userData.profile_image && imageUrl == null" />
+                <img src="{{base+userData.profile_image}}" width="149px" height="149px" *ngIf="userData.profile_image && imageUrl == null" />
+                <img src="{{imageUrl}}" width="45px" height="45px" *ngIf="imageUrl != null" />
+              </div>
+            </ion-col>
+
+            <ion-col size="6">
+              <div class="profile-s">
+                <p>Shanaya</p>
+                <ion-button expand="block" (click)="onEdit()" shape="round" color="secondary">
+                  <ion-icon name="create-outline" slot="start"></ion-icon> Edit Profile
+                </ion-button>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </div> -->
+    <div class="profile-edit">
+      <ion-row>
+        <ion-col size-xl="6" offset-xl="3">
+          <ion-row>
+            <ion-col size="12">
+              <div class="avtar-icon" (click)="takePicture()">
+                <!-- <img src="/assets/avtar-icon.png" width="45px" *ngIf="imageUrl == null" /> 
+                <img [src]="imageUrl" width="149px" height="149px" *ngIf="imageUrl != null"/> -->
+                <img src="/assets/avtar-icon.png" width="45px" *ngIf="!userData.profile_image && imageUrl == null" />
+                <img src="{{base+userData.profile_image}}" width="149px" height="149px" *ngIf="userData.profile_image && imageUrl == null" />
+                <img src="{{imageUrl}}" width="45px" height="45px" *ngIf="imageUrl != null" />
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div class="profile-service">
+      <form [formGroup]="editProfile" (ngSubmit)="update()">
+        <ion-row>
+          <ion-col>
+            <p>Interested Service</p>
+          </ion-col>
+          <ion-col>
+
+            <ion-item>
+              <ion-label>Add Service</ion-label>
+              <ion-select [compareWith]="compareWith" formControlName="WorkerCategory" multiple="true">
+                <ion-select-option *ngFor="let user of catList" [value]="user.name">{{user.name}}</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row style="width: 100%;" class="profile-pg">
+          <ion-col size="6" *ngFor="let worker_cat of userData.WorkerCategory" class="ion-no-padding">
+            <ion-button color="light" class="btn-order btn-profile" expand="block" shape="round">{{worker_cat}}
+            </ion-button>
+          </ion-col>
+
+        </ion-row>
+        <ion-row class="profile-pg">
+          <ion-col size="6">
+            <div class="box-btn">
+              <p>Available on week off </p>
+              <ion-button expand="block" shape="round" color="secondary">Yes</ion-button>
+            </div>
+          </ion-col>
+
+          <ion-col size="6">
+            <div class="box-btn">
+              <p>Leave Request</p>
+              <ion-button expand="block" shape="round" color="secondary" (click)="onLeaveReq()">Leave Request
+              </ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-list class="profile-pg" style="background: transparent;">
+          <p class="work-p">Present Address</p>
+          <ion-item lines="none" class="locate-it input">
+            <ion-icon name="Location" slot="start" color="secondary"></ion-icon>
+            <ion-input type="text" formControlName="present_addess" placeholder="Present Address"></ion-input>
+
+          </ion-item>
+          <p class="work-p">Permanent Address</p>
+          <ion-item lines="none" class="locate-it input">
+            <ion-icon name="Location" slot="start" color="secondary"></ion-icon>
+            <ion-input type='text' formControlName="permanent_addess" placeholder="Permanent Address"> </ion-input>
+
+          </ion-item>
+
+          <p class="work-p">ID Proof</p>
+          <div class="profile-box ion-margin-bottom" (click)="takePictureId()">
+
+            <!-- <div *ngIf="imageUrl1">
+              <p>
+                <ion-icon name="cloud-upload" color="primary" slot="start"></ion-icon>
+              </p>
+              Upload Your ID
+            </div> -->
+            <img [src]="imageUrl1" *ngIf="imageUrl1" />
+            <img src="{{base+userData.id_image}}" width="149px" height="149px" *ngIf="userData.id_image && imageUrl1 == null" />
+
+          </div>
+
+          <p class="work-p">Family Photo</p>
+          <div class="profile-box ion-margin-bottom" (click)="takePictureFamily()">
+
+            <!-- <div *ngIf="imageUrl2">
+              <p>
+                <ion-icon name="cloud-upload" color="primary" slot="start"></ion-icon>
+              </p>
+              Upload Family Photo
+            </div> -->
+            <img [src]="imageUrl2" *ngIf="imageUrl2" />
+            <img src="{{base+userData.family_photo}}" width="149px" height="149px" *ngIf="userData.family_photo && imageUrl2 == null" />
+
+          </div>
+
+
+          <!-- <p class="work-p">Police verification copy</p>
+        <div class="profile-box ion-margin-bottom" (click)="onAadhaarImage()">
+
+          <div *ngIf="!aadhaar_base64">
+            <p>
+              <ion-icon name="cloud-upload" color="primary" slot="start"></ion-icon>
+            </p>
+            Upload Your ID
+          </div>
+          <img [src]="aadhaar_base64" *ngIf="aadhaar_base64" />
+        </div> -->
+
+
+          <p class="work-p">Contact</p>
+          <ion-item lines="none" class="locate-it input">
+            <ion-icon name="call" slot="start" color="secondary"></ion-icon>
+            <ion-input type="tel" disabled formControlName="mobile" placeholder="Contact no."> </ion-input>
+
+          </ion-item>
+          <p class="work-p">Family contact details</p>
+          <ion-item lines="none" class="locate-it input">
+            <ion-icon name="call" slot="start" color="secondary"></ion-icon>
+            <ion-input type="tel" formControlName="alt_no" placeholder="family Contact no."></ion-input>
+
+          </ion-item>
+        </ion-list>
+        <ion-button expand="block" style="margin-top: 12px;" class="ion-margin-top" type="submit" shape="round" color="secondary">
+          <ion-icon name="create-outline" slot="start"></ion-icon> Edit Profile
+        </ion-button>
+      </form>
+    </div>
+  </ion-grid>
+</ion-content>

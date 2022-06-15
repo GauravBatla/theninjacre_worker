@@ -1,0 +1,24 @@
+ion-list ion-item:nth-child(even) {
+    --background:#DCEDF9;
+}
+
+ion-item {
+    border-radius: 0px;
+    margin-bottom: 4%;
+}
+.notification-sec {
+    --background: transparent linear-gradient(180deg, #F8FCFF 0%, #E1F2FE 100%) 0% 0% no-repeat padding-box;
+}
+.list-md {
+    
+    --background: transparent!important;
+}
+.notification-bx {
+    margin-top: 40px;
+}
+ion-list {
+    background: transparent;
+}
+.notification-label {
+    color: #4A4B4D!important;
+}

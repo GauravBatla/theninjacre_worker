@@ -1,0 +1,45 @@
+
+
+
+<ion-content class="login-bg">
+  <ion-grid>
+    <ion-row *ngIf="!otpdiv">
+      <ion-col size-xl="6" offset-xl="3">
+        <div class="topHeader">
+          <div class="logo">
+            <img src="/assets/verify.png" class="centerIMG" />
+          </div>
+          <p class="welcome-b">We have sent an OTP to<br> your Mobile</p>
+          <p class="verify-p">Please check your mobile number 071******12 <br>continue to reset your password</p>
+          
+          <ion-row>
+            <ion-col class="ion-text-center" style="font-size: 28px;">
+              <ion-input class="otp-input" #otp1 required maxLength="1" (keyup)="otpController($event,otp2,'')" [(ngModel)]="opt1" type="tel">
+              </ion-input>
+              <ion-input class="otp-input" #otp2 required maxLength="1" (keyup)="otpController($event,otp3,otp1)" [(ngModel)]="opt2" type="tel">
+              </ion-input>
+              <ion-input class="otp-input" #otp3 required maxLength="1" (keyup)="otpController($event,otp4,otp2)" [(ngModel)]="opt3" type="tel">
+              </ion-input>
+              <ion-input class="otp-input" #otp4  required maxLength="1" (keyup)="otpController($event,otp5,otp3)" [(ngModel)]="opt4" type="tel">
+              </ion-input>
+              <ion-input class="otp-input" #otp5  required maxLength="1" (keyup)="otpController($event,'',otp4)" style="display: none;" type="tel">
+              </ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="ion-margin-top ion-no-padding">
+              <ion-button expand="block" class="login-btn">Verify</ion-button>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col class="ion-margin-top ion-no-padding">
+              <p class="click-link">Didn't Receive? <span>Click Here</span></p>
+            </ion-col>
+          </ion-row>
+          
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

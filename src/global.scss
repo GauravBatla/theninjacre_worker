@@ -1,0 +1,91 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+.input {
+    --background: var(--ion-color-tertiary) !important;
+    border-radius: 50px;
+    --padding-start: 15px !important;
+    width: 100%;
+    --placeholder-color: #000;
+    margin-bottom: 26px;
+    color: #000 !important;
+  
+    ion-label {
+      display: none !important;
+    }
+  
+    ion-input {
+      --placeholder-color: #0C3469 !important;
+      color: #000 !important;
+      
+    }
+  
+    ion-select {
+      min-width: 100%;
+      padding: unset;
+      --placeholder-color: #000 !important;
+      color: #000 !important;
+    }
+  
+    ion-select::part(icon) {
+      width: 20px;
+      color: var(--ion-color-tertiary);
+      opacity: 1;
+    }
+  
+    ion-textarea {
+      --placeholder-color: #000 !important;
+      color: #000 !important;
+    }
+  }
+  
+  .input.ion-touched.ion-invalid {
+    border: 1px solid var(--ion-color-danger);
+  }
+  
+  .input.ion-touched.ion-valid {
+    border: 1px solid var(--ion-color-tertiary);
+  }
+
+  .toolbar-css {
+    --background: #F8FCFF;
+  }
+
+  .popover-css {
+    --width: 95%;
+    --height: fit-content;
+    --backdrop-opacity: 0.6;
+    --overflow:visible ;
+  }
+
+  .otp-resend {
+    color: #7c7d7e;
+    span {
+      color: var(--ion-color-primary) !important;
+      font-weight: bold;
+    }
+  }

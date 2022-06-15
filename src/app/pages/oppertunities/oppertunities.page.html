@@ -1,0 +1,221 @@
+<ion-content class="login-bg">
+  <ion-grid>
+    <ion-row>
+
+      <ion-col size-xl="6" offset-xl="3">
+        <div class="">
+          <!-- <ion-row>
+            <ion-col size="8">
+              <ion-item style="--background: transparent;" lines="none">
+                <ion-avatar slot="start">
+                  <img src="/assets/login.png" />
+                </ion-avatar>
+                <ion-label>Welcome <br/> <strong>{{'Shanaya'}}</strong></ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col size="4">
+              <ion-button color="primary" shape="round">
+                Update Time Slot
+              </ion-button>
+            </ion-col>
+          </ion-row> -->
+          <!-- <ion-row> -->
+          <div class="profile-opper">
+            <ion-item [routerLink]="['/profile']" detail="false" style="--background: transparent;" lines="none">
+              <ion-avatar slot="start">
+                <img src="/assets/avtar-icon.png" />
+              </ion-avatar>
+              <ion-label>Welcome <br /><strong>{{name}}</strong></ion-label>
+            </ion-item>
+            <ion-button color="primary" [routerLink]="['/notification']" routerLinkActive="router-link-active"
+              shape="round" size="small">
+              Notification
+            </ion-button>
+          </div>
+          <div class="oppertunity-l">
+            <h3>We have <b>Awesome</b></h3>
+            <p>Oppertunities</p>
+          </div>
+
+          <ion-segment (ionChange)="segmentChanged($event)" [value]="selectedSegment" mode="md">
+            <ion-segment-button value="Booked">
+              <ion-label [color]="selectedSegment == 'Booked' ? 'primary' : 'secondary'">Booked</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="Confirmed">
+              <ion-label [color]="selectedSegment == 'Confirmed' ? 'primary' : 'secondary'">Confirmed</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="Completed">
+              <ion-label [color]="selectedSegment == 'Completed' ? 'primary' : 'secondary'">Completed</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+
+          <div *ngIf="selectedSegment == 'Confirmed'">
+            <div class="work-b" *ngFor="let i of Confirmed">
+              <ion-row style="width: 100%;">
+                <ion-col size="6">
+                  <img src="/assets/work.png" class="centerIMG" style="max-width: 70px;" />
+                  <p class="work-p">Type Or Work</p>
+                </ion-col>
+                <ion-col size="6">
+                  <div class="order-l">
+                    <p>Order #{{i.unique_id}} </p>
+                    <ion-button color="light" *ngFor="let i of i.bookingdetails" class="btn-order btn-cleaning" expand="block" shape="round"> {{i.category_name}}
+                    </ion-button>
+                    <!-- <span>Time 12:00 pm 12 Oct 2022</span> -->
+                  </div>
+                </ion-col>
+              </ion-row>
+
+              <!-- <ion-row style="width: 100%;">
+                <ion-col size="4" *ngFor="let i of i.bookingdetails" class="ion-no-padding">
+                  <ion-button color="light" class="btn-order btn-cleaning" expand="block" shape="round"> {{i.category_name}}
+                  </ion-button>
+                </ion-col>
+
+              </ion-row> -->
+              <ion-list>
+                <ion-label class="work-p">Work Location</ion-label>
+                <ion-item class="locate-it" lines="none">
+                  <ion-icon name="locate" slot="start" color="secondary"></ion-icon>
+                  <ion-label style="white-space: break-spaces;"> {{i.location}}
+                  </ion-label>
+                </ion-item>
+                <ion-label class="work-p">Time</ion-label>
+                <ion-item class="locate-it" lines="none">
+                  <ion-icon name="time" slot="start" color="secondary"></ion-icon>
+                  <ion-label>{{i.start_time.toString().substr(0,5)}} - {{i.end_time.toString().substr(0, 5)}}</ion-label>
+                </ion-item>
+                <ion-label class="work-p">Date</ion-label>
+                <ion-item class="locate-it" lines="none">
+                  <ion-icon name="calendar" slot="start" color="secondary"></ion-icon>
+                  <ion-label> {{i.booking_date_start | date :'mediumDate'}} - {{i.booking_date_end | date :'mediumDate'}} </ion-label>
+                </ion-item>
+              </ion-list>
+
+              <!-- <ion-row class="button-sp">
+                <ion-col size="6">
+                  <ion-button expand="block" shape="round" color="secondary">Accept</ion-button>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-button expand="block" shape="round" color="primary">Reject</ion-button>
+                </ion-col>
+              </ion-row> -->
+            </div>
+
+          </div>
+
+          <div *ngIf="selectedSegment == 'Completed'">
+            <div class="work-b" *ngFor="let i of Completed">
+              <ion-row style="width: 100%;">
+                <ion-col size="6">
+                  <img src="/assets/work.png" class="centerIMG" style="max-width: 70px;" />
+                  <p class="work-p">Type Or Work</p>
+                </ion-col>
+                <ion-col size="6">
+                  <div class="order-l">
+                 <p>Order #{{i.unique_id}} </p>
+                    <ion-button color="light" *ngFor="let i of i.bookingdetails" class="btn-order btn-cleaning" expand="block" shape="round"> {{i.category_name}}
+                    </ion-button>
+
+                    <!-- <span>Time 12:00 pm 12 Oct 2022</span> -->
+                  </div>
+                </ion-col>
+              </ion-row>
+
+              <!-- <ion-row style="width: 100%;">
+                <ion-col size="4" *ngFor="let i of i.bookingdetails" class="ion-no-padding">
+                  <ion-button color="light" class="btn-order btn-cleaning" expand="block" shape="round"> {{i.category_name}}
+                  </ion-button>
+                </ion-col>
+
+              </ion-row> -->
+              <ion-list>
+                <ion-label class="work-p">Work Location</ion-label>
+                <ion-item class="locate-it" lines="none">
+                  <ion-icon name="locate" slot="start" color="secondary"></ion-icon>
+                  <ion-label style="white-space: break-spaces;"> 18, Vaishali Enclave, Pitampura, Confirmed Delhi-
+                    110034
+                  </ion-label>
+                </ion-item>
+                <ion-label class="work-p">Time</ion-label>
+                <ion-item class="locate-it" lines="none">
+                  <ion-icon name="time" slot="start" color="secondary"></ion-icon>
+                  <ion-label> {{i.start_time.toString().substr(0,5)}} - {{i.end_time.toString().substr(0, 5)}}</ion-label>
+                </ion-item>
+                <ion-label class="work-p">Date</ion-label>
+                <ion-item class="locate-it" lines="none">
+                  <ion-icon name="calendar" slot="start" color="secondary"></ion-icon>
+                  <ion-label> {{i.booking_date_start | date :'mediumDate'}} - {{i.booking_date_end | date :'mediumDate'}} </ion-label>
+                </ion-item>
+              </ion-list>
+
+              <!-- <ion-row class="button-sp">
+                <ion-col size="6">
+                  <ion-button expand="block" shape="round" color="secondary">Accept</ion-button>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-button expand="block" shape="round" color="primary">Reject</ion-button>
+                </ion-col>
+              </ion-row> -->
+            </div>
+          </div>
+
+          <div *ngIf="selectedSegment == 'Booked'">  
+            <div class="work-b" *ngFor="let i of Booked">
+              <ion-row style="width: 100%;">
+                <ion-col size="6">
+                  <img src="/assets/work.png" class="centerIMG" style="max-width: 70px;" />
+                  <p class="work-p">Type Or Work</p>
+                </ion-col>
+                <ion-col size="6">
+                  <div class="order-l">
+                 <p>Order #{{i.unique_id}} </p>
+                    <!-- <span>Time 12:00 pm 12 Oct 2022</span> -->
+                    <ion-button color="light" *ngFor="let i of i.bookingdetails" class="btn-order btn-cleaning" expand="block" shape="round"> {{i.category_name}}
+                    </ion-button>
+                  </div>
+                </ion-col>
+              </ion-row>
+
+              <!-- <ion-row style="width: 100%;">
+                <ion-col size="4" *ngFor="let i of i.bookingdetails" class="ion-no-padding">
+                  <ion-button color="light" class="btn-order btn-cleaning" expand="block" shape="round"> {{i.category_name}}
+                  </ion-button>
+                </ion-col>
+
+              </ion-row> -->
+              <ion-list>
+                <ion-label class="work-p">Work Location</ion-label>
+                <ion-item class="locate-it" lines="none">
+                  <ion-icon name="locate" slot="start" color="secondary"></ion-icon>
+                  <ion-label style="white-space: break-spaces;">  {{i.location}}
+                  </ion-label>
+                </ion-item>
+                <ion-label class="work-p">Time</ion-label>
+                <ion-item class="locate-it" lines="none">
+                  <ion-icon name="time" slot="start" color="secondary"></ion-icon>
+                  <ion-label>{{i.start_time.substr(0,5)}}</ion-label>
+                </ion-item>
+                <ion-label class="work-p">Date</ion-label>
+                <ion-item class="locate-it" lines="none">
+                  <ion-icon name="calendar" slot="start" color="secondary"></ion-icon>
+                  <ion-label> {{i.booking_date_start | date :'mediumDate'}} - {{i.booking_date_end | date :'mediumDate'}} </ion-label>
+                </ion-item>
+              </ion-list>
+
+              <ion-row class="button-sp">
+                <ion-col size="6">
+                  <ion-button expand="block" (click)="updateStatus('Confirmed', i.unique_id)" shape="round" color="secondary">Accept</ion-button>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-button expand="block" shape="round" (click)="updateStatus('Reject' , i.unique_id)" color="primary">Reject</ion-button>
+                </ion-col>
+              </ion-row>
+            </div>
+          </div>
+          
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,41 @@
+
+.share-app{
+    text-align: center;
+   
+    padding-top: 50px;
+}
+.share-app h3 {
+    color: #4A4956;
+    font-size: 30px;
+    font-weight: 600;
+}
+.login-btn{
+    --border-radius: 50px;
+    height: 50px;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 26px;
+    text-transform: none;
+    
+}
+.share-app h3 {
+    padding: 20px 0px;
+}
+.share-app p {
+    padding: 11px 0px;
+    color: #4A4956;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 500;
+}
+.share-app h1 {
+    padding: 11px 0px;
+    color: #3C3C3C;
+    font-size: 28px;
+    font-weight: 800;
+    
+}
+.share-apps {
+    --background: transparent linear-gradient(180deg, #F8FCFF 0%, #E1F2FE 100%) 0% 0% no-repeat padding-box;
+   
+}

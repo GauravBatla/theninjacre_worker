@@ -1,0 +1,154 @@
+.login-heading {
+  text-align: center;
+}
+
+.login-input {
+  --background: #F7F8FC;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #E1F2FE;
+}
+
+ion-input {
+  --placeholder-color: #000;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.login-box {
+  text-align: center;
+}
+
+.login-bg {
+  --background: transparent linear-gradient(180deg, #F8FCFF 0%, #E1F2FE 100%) 0% 0% no-repeat padding-box;
+}
+
+ion-list {
+  background: transparent;
+}
+
+.login-img {
+  text-align: center;
+}
+
+.profile-opper {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.topHeader {
+  transform: translateX(-50%) translateY(-50%);
+  top: 50%;
+  left: 50%;
+  position: fixed;
+  width: 90%;
+  text-align: center;
+
+
+}
+
+.oppertunity-l {
+  margin: 0px 16px;
+  padding: 20px 0px;
+}
+
+.login-btn {
+  --border-radius: 50px;
+}
+
+.oppertunity-l h3 {
+  font-size: 18px;
+  color: #0C3469;
+  margin-bottom: 2px;
+}
+
+.oppertunity-l p {
+  font-size: 32px;
+  color: #0C3469;
+  font-weight: 500;
+  margin: 0 0px;
+  text-align: left;
+}
+
+.opper-btn {
+  background: #0C3469;
+  color: #FFAE5A;
+  margin: 30px 4px;
+  // text-transform: capitalize;
+  font-size: 14px;
+  border-radius: 50px;
+  font-weight: 700;
+}
+
+.work-b {
+  background: #DCEDF9;
+  border-radius: 20px;
+  padding: 20px 20px;
+  margin-bottom: 5%;
+}
+
+.order-l {
+  text-align: right;
+}
+
+.order-l p {
+  font-weight: 700;
+  color: #0C3469;
+  margin-bottom: 4px;
+  font-family: sans-serif;
+  font-size: 20;
+  font-size: 18px;
+}
+
+.order-l span {
+  font-weight: 700;
+  font-family: sans-serif;
+  font-size: 20;
+  font-size: 12px;
+  color: #616161;
+}
+
+.btn-cleaning {
+  border-radius: 50px !important;
+  font-size: 12px;
+  text-transform: capitalize;
+  --color: #616161;
+  --background: #F2F9FE;
+}
+
+.locate-it {
+  border-radius: 50px;
+  color: #616161;
+  margin-bottom: 20px;
+  font-weight: 400;
+  --background: #F2F9FE;
+  margin-top: 8px;
+}
+
+.button-sp {
+  margin-top: 15px;
+}
+
+.work-p {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0C3469;
+  font-family: sans-serif;
+  margin-bottom: 6px !important;
+}
+
+ion-segment {
+  ion-segment-button {
+    margin: 5px;
+    --background: var(--ion-color-tertiary);
+    border-radius: 30px;
+    --background-checked: var(--ion-color-secondary);
+    --indicator-height: 0px;
+    width: 33vw;
+  }
+
+  margin-top: 5%;
+  margin-bottom: 5%;
+}

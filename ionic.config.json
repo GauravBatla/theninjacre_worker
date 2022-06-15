@@ -1,0 +1,7 @@
+{
+  "name": "TheNinjaCare_Worker",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

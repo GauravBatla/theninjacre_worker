@@ -1,0 +1,6 @@
+{
+	"appId": "com.theninjacare.worker",
+	"appName": "The Ninja Care - Worker",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

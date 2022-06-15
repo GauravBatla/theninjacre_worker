@@ -1,0 +1,54 @@
+.login-box {
+    margin-left: 10%;
+    width: 80%;
+    background:#DCEDF9;
+    border-radius: 20px;
+    padding: 20px 20px;
+    margin: 30px 10px;
+  }
+  ion-list {
+    background: transparent;
+}
+
+.login-heading{
+    text-align: center;
+  }
+  
+  .login-input{
+    --background:#F2F9FE;
+    border-radius:20px;
+    margin-bottom: 28px;
+    margin-top: 10px;
+    border:1px solid #E1F2FE;
+  }
+  .login-box {
+    margin-left: 2%;
+    width: 96%;
+  }
+  h2.login-heading {
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    color: #0C3469;
+    margin-bottom: 40px;
+  }
+
+ 
+  ion-list {
+    background: transparent;
+}
+
+
+  .label-request{
+
+    font-weight: 700;
+    font-size: 16px;
+    margin: 0px 12px;
+    color: #0C3469;
+  }
+  .login-box p {
+    text-align: center;
+    color: #0C3469;
+    margin-bottom: -10px;
+    font-size: 18px;
+}

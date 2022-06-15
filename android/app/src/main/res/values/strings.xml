@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">TheNinjaCare_Worker</string>
+    <string name="title_activity_main">TheNinjaCare_Worker</string>
+    <string name="package_name">com.theninjacare.worker</string>
+    <string name="custom_url_scheme">com.theninjacare.worker</string>
+</resources>
